@@ -1,0 +1,29 @@
+{
+  "author": "Andreas Lind <andreas@one.com>",
+  "name": "esanimate",
+  "description": "Helpers for converting back and forth between esprima/SpiderMonkey ASTs and JavaScript objects.",
+  "version": "1.0.0",
+  "repository": {
+    "url": "git://github.com/papandreou/esanimate.git"
+  },
+  "license": "BSD-3-Clause",
+  "main": "lib/esanimate.js",
+  "devDependencies": {
+    "escodegen": "1.7.0",
+    "esprima": "2.6.0",
+    "istanbul": "0.3.22",
+    "jshint": "2.8.0",
+    "magicpen-prism": "2.2.1",
+    "mocha": "2.3.3",
+    "unexpected": "9.16.1"
+  },
+  "dependencies": {
+    "unexpected": "git://github.com/unexpectedjs/unexpected.git#d21eae6a3e634ee65d03a687f7f85f150c471831"
+  },
+  "scripts": {
+    "lint": "jshint .",
+    "test": "mocha && npm run lint",
+    "travis": "npm test && npm run coverage && (<coverage/lcov.info coveralls || true)",
+    "coverage": "NODE_ENV=development istanbul cover _mocha -- --reporter dot && echo google-chrome coverage/lcov-report/index.html"
+  }
+}
