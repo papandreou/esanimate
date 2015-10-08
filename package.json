@@ -15,7 +15,8 @@
     "jshint": "2.8.0",
     "magicpen-prism": "2.2.1",
     "mocha": "2.3.3",
-    "unexpected": "9.16.1"
+    "unexpected": "9.16.1",
+    "unexpected-function-equality": "1.0.0"
   },
   "dependencies": {
     "unexpected": "git://github.com/unexpectedjs/unexpected.git#d21eae6a3e634ee65d03a687f7f85f150c471831"
