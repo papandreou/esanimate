@@ -20,6 +20,10 @@
   "dependencies": {
     "unexpected": "git://github.com/unexpectedjs/unexpected.git#d21eae6a3e634ee65d03a687f7f85f150c471831"
   },
+  "peerDependencies": {
+    "escodegen": "^1.7.0",
+    "esprima": "^2.6.0"
+  },
   "scripts": {
     "lint": "jshint .",
     "test": "mocha && npm run lint",
