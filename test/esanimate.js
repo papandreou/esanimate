@@ -93,6 +93,19 @@ describe('esanimate', function () {
         });
     });
 
+    it('should use a Literal for a key that needs quoting', function () {
+        expect({ 'needs.quoting': 123 }, 'to convert back and forth to', {
+            type: 'ObjectExpression',
+            properties: [
+                {
+                    kind: 'init',
+                    key: { type: 'Literal', value: 'needs.quoting' },
+                    value: { type: 'Literal', value: 123 }
+                }
+            ]
+        });
+    });
+
     it('should convert regular expression', function () {
         expect(/foobar/igm, 'to convert back and forth to', { type: 'Literal', value: /foobar/igm });
     });
