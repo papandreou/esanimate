@@ -1,6 +1,11 @@
 esanimate
 =========
 
+[![NPM version](https://badge.fury.io/js/esanimate.svg)](http://badge.fury.io/js/esanimate)
+[![Build Status](https://travis-ci.org/papandreou/esanimate.svg?branch=master)](https://travis-ci.org/papandreou/esanimate)
+[![Coverage Status](https://img.shields.io/coveralls/papandreou/esanimate.svg)](https://coveralls.io/r/papandreou/esanimate?branch=master)
+[![Dependency Status](https://david-dm.org/papandreou/esanimate.svg)](https://david-dm.org/papandreou/esanimate)
+
 Convert back and forth between esprima/SpiderMonkey ASTs and JavaScript objects.
 
 Example:
