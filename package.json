@@ -10,8 +10,6 @@
   "main": "lib/esanimate.js",
   "devDependencies": {
     "coveralls": "2.11.6",
-    "escodegen": "1.7.0",
-    "esprima": "2.6.0",
     "istanbul": "0.3.22",
     "jshint": "2.8.0",
     "magicpen-prism": "2.2.1",
@@ -19,7 +17,7 @@
     "unexpected": "10.0.1",
     "unexpected-function-equality": "1.0.1"
   },
-  "peerDependencies": {
+  "dependencies": {
     "escodegen": "^1.7.0",
     "esprima": "^2.6.0"
   },
