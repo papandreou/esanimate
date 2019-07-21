@@ -12,7 +12,7 @@
     "coveralls": "2.11.6",
     "istanbul": "0.3.22",
     "jshint": "2.8.0",
-    "magicpen-prism": "2.2.1",
+    "magicpen-prism": "3.0.2",
     "mocha": "2.3.3",
     "unexpected": "11.7.0",
     "unexpected-function-equality": "1.0.1"
