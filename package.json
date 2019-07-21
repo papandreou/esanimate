@@ -14,7 +14,7 @@
     "jshint": "2.8.0",
     "magicpen-prism": "2.2.1",
     "mocha": "2.3.3",
-    "unexpected": "10.0.1",
+    "unexpected": "11.7.0",
     "unexpected-function-equality": "1.0.1"
   },
   "dependencies": {
