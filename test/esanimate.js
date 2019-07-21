@@ -11,7 +11,11 @@ expect.addAssertion('<any> to convert to [canonical] ast <object>', function(
   subject,
   value
 ) {
-  expect(esanimate.astify(subject, expect.flags.canonical), 'to equal', value);
+  expect(
+    esanimate.astify(subject, expect.flags.canonical),
+    'to exhaustively satisfy',
+    value
+  );
 });
 
 expect.addAssertion('to convert to object', function(expect, subject, value) {
@@ -178,7 +182,7 @@ describe('esanimate', function() {
         id: { type: 'Identifier', name: 'foo' },
         generator: false,
         expression: false,
-        defaults: [],
+        async: false,
         params: [
           { type: 'Identifier', name: 'bar' },
           { type: 'Identifier', name: 'quux' }
@@ -211,7 +215,7 @@ describe('esanimate', function() {
         id: null,
         generator: false,
         expression: false,
-        defaults: [],
+        async: false,
         params: [{ type: 'Identifier', name: 'bar' }],
         body: {
           type: 'BlockStatement',
