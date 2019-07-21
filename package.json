@@ -9,7 +9,7 @@
   "license": "BSD-3-Clause",
   "main": "lib/esanimate.js",
   "devDependencies": {
-    "coveralls": "2.11.6",
+    "coveralls": "3.0.5",
     "istanbul": "0.4.5",
     "jshint": "2.8.0",
     "magicpen-prism": "3.0.2",
