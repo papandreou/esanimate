@@ -10,10 +10,19 @@
   "main": "lib/esanimate.js",
   "devDependencies": {
     "coveralls": "2.11.6",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-config-standard": "^13.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-mocha": "^6.0.0",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
     "istanbul": "0.4.5",
     "jshint": "2.8.0",
     "magicpen-prism": "3.0.2",
     "mocha": "2.3.3",
+    "prettier": "^1.18.2",
     "unexpected": "11.7.0",
     "unexpected-function-equality": "1.0.1"
   },
@@ -22,7 +31,7 @@
     "esprima": "^2.6.0"
   },
   "scripts": {
-    "lint": "jshint .",
+    "lint": "eslint . && prettier --check '**/*.js'",
     "test": "mocha && npm run lint",
     "travis": "npm test && npm run coverage && (<coverage/lcov.info coveralls || true)",
     "coverage": "NODE_ENV=development istanbul cover _mocha -- --reporter dot && echo google-chrome coverage/lcov-report/index.html"
