@@ -1,4 +1,4 @@
-/*global describe, it*/
+/* global describe, it */
 var expect = require('unexpected').clone()
     .use(require('magicpen-prism'))
     .use(require('unexpected-function-equality'));
