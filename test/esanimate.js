@@ -47,6 +47,7 @@ describe('esanimate', function() {
         type: 'ObjectExpression',
         properties: [
           {
+            type: 'Property',
             kind: 'init',
             key: { type: 'Identifier', name: 'a' },
             value: {
@@ -58,6 +59,7 @@ describe('esanimate', function() {
             }
           },
           {
+            type: 'Property',
             kind: 'init',
             key: { type: 'Identifier', name: 'b' },
             value: { type: 'Literal', value: 456 }
@@ -131,11 +133,13 @@ describe('esanimate', function() {
         type: 'ObjectExpression',
         properties: [
           {
+            type: 'Property',
             kind: 'init',
             key: { type: 'Identifier', name: 'keyName1' },
             value: { type: 'Literal', value: 'stringValue' }
           },
           {
+            type: 'Property',
             kind: 'init',
             key: { type: 'Identifier', name: 'keyName2' },
             value: {
@@ -156,6 +160,7 @@ describe('esanimate', function() {
       type: 'ObjectExpression',
       properties: [
         {
+          type: 'Property',
           kind: 'init',
           key: { type: 'Literal', value: 'needs.quoting' },
           value: { type: 'Literal', value: 123 }
