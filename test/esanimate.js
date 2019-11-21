@@ -37,7 +37,10 @@ expect.addAssertion('to convert back and forth to', function(
 ) {
   return expect
     .it('to convert to ast', value)
-    .and('to be converted from ast', value)(subject);
+    .and(
+      'to be converted from ast',
+      value
+    )(subject);
 });
 
 describe('esanimate', function() {
