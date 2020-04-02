@@ -1,5 +1,4 @@
-esanimate
-=========
+# esanimate
 
 [![NPM version](https://badge.fury.io/js/esanimate.svg)](http://badge.fury.io/js/esanimate)
 [![Build Status](https://travis-ci.org/papandreou/esanimate.svg?branch=master)](https://travis-ci.org/papandreou/esanimate)
@@ -31,23 +30,23 @@ And the other way around:
 
 ```javascript
 esanimate.objectify({
-    type: 'ObjectExpression',
-    properties: [
-        {
-            kind: 'init',
-            key: { type: 'Identifier', name: 'foo' },
-            value: { type: 'Literal', value: 'bar' }
-        }
-    ]
+  type: 'ObjectExpression',
+  properties: [
+    {
+      kind: 'init',
+      key: { type: 'Identifier', name: 'foo' },
+      value: { type: 'Literal', value: 'bar' },
+    },
+  ],
 });
 ```
 
 Output:
+
 ```
 { foo: 'bar' }
 ```
 
-License
--------
+## License
 
 3-clause BSD license -- see the `LICENSE` file for details.

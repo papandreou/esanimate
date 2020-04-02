@@ -6,7 +6,7 @@ var expect = require('unexpected')
 
 var esanimate = require('../lib/esanimate');
 
-expect.addAssertion('<any> to convert to [canonical] ast <object>', function(
+expect.addAssertion('<any> to convert to [canonical] ast <object>', function (
   expect,
   subject,
   value
@@ -18,11 +18,11 @@ expect.addAssertion('<any> to convert to [canonical] ast <object>', function(
   );
 });
 
-expect.addAssertion('to convert to object', function(expect, subject, value) {
+expect.addAssertion('to convert to object', function (expect, subject, value) {
   expect(esanimate.objectify(subject), 'to equal', value);
 });
 
-expect.addAssertion('to be converted from ast', function(
+expect.addAssertion('to be converted from ast', function (
   expect,
   subject,
   value
@@ -30,7 +30,7 @@ expect.addAssertion('to be converted from ast', function(
   expect(esanimate.objectify(value), 'to equal', subject);
 });
 
-expect.addAssertion('to convert back and forth to', function(
+expect.addAssertion('to convert back and forth to', function (
   expect,
   subject,
   value
@@ -43,9 +43,9 @@ expect.addAssertion('to convert back and forth to', function(
     )(subject);
 });
 
-describe('esanimate', function() {
-  describe('#astify', function() {
-    it('should support the canonicalize option', function() {
+describe('esanimate', function () {
+  describe('#astify', function () {
+    it('should support the canonicalize option', function () {
       expect({ b: 456, a: [1, 2] }, 'to convert to canonical ast', {
         type: 'ObjectExpression',
         properties: [
@@ -57,64 +57,64 @@ describe('esanimate', function() {
               type: 'ArrayExpression',
               elements: [
                 { type: 'Literal', value: 1 },
-                { type: 'Literal', value: 2 }
-              ]
-            }
+                { type: 'Literal', value: 2 },
+              ],
+            },
           },
           {
             type: 'Property',
             kind: 'init',
             key: { type: 'Identifier', name: 'b' },
-            value: { type: 'Literal', value: 456 }
-          }
-        ]
+            value: { type: 'Literal', value: 456 },
+          },
+        ],
       });
     });
   });
 
-  it('should convert undefined', function() {
+  it('should convert undefined', function () {
     expect(undefined, 'to convert back and forth to', {
       type: 'Identifier',
-      name: 'undefined'
+      name: 'undefined',
     });
   });
 
-  it('should convert null', function() {
+  it('should convert null', function () {
     expect(null, 'to convert back and forth to', {
       type: 'Literal',
-      value: null
+      value: null,
     });
   });
 
-  it('should convert false', function() {
+  it('should convert false', function () {
     expect(false, 'to convert back and forth to', {
       type: 'Literal',
-      value: false
+      value: false,
     });
   });
 
-  it('should convert true', function() {
+  it('should convert true', function () {
     expect(true, 'to convert back and forth to', {
       type: 'Literal',
-      value: true
+      value: true,
     });
   });
 
-  it('should convert string literal', function() {
+  it('should convert string literal', function () {
     expect('foo', 'to convert back and forth to', {
       type: 'Literal',
-      value: 'foo'
+      value: 'foo',
     });
   });
 
-  it('should convert number literal', function() {
+  it('should convert number literal', function () {
     expect(123, 'to convert back and forth to', {
       type: 'Literal',
-      value: 123
+      value: 123,
     });
   });
 
-  it('should convert array literal', function() {
+  it('should convert array literal', function () {
     expect(['foo', true, [null]], 'to convert back and forth to', {
       type: 'ArrayExpression',
       elements: [
@@ -122,13 +122,13 @@ describe('esanimate', function() {
         { type: 'Literal', value: true },
         {
           type: 'ArrayExpression',
-          elements: [{ type: 'Literal', value: null }]
-        }
-      ]
+          elements: [{ type: 'Literal', value: null }],
+        },
+      ],
     });
   });
 
-  it('should convert object literal', function() {
+  it('should convert object literal', function () {
     expect(
       { keyName1: 'stringValue', keyName2: [null, 10] },
       'to convert back and forth to',
@@ -139,7 +139,7 @@ describe('esanimate', function() {
             type: 'Property',
             kind: 'init',
             key: { type: 'Identifier', name: 'keyName1' },
-            value: { type: 'Literal', value: 'stringValue' }
+            value: { type: 'Literal', value: 'stringValue' },
           },
           {
             type: 'Property',
@@ -149,16 +149,16 @@ describe('esanimate', function() {
               type: 'ArrayExpression',
               elements: [
                 { type: 'Literal', value: null },
-                { type: 'Literal', value: 10 }
-              ]
-            }
-          }
-        ]
+                { type: 'Literal', value: 10 },
+              ],
+            },
+          },
+        ],
       }
     );
   });
 
-  it('should use a Literal for a key that needs quoting', function() {
+  it('should use a Literal for a key that needs quoting', function () {
     expect({ 'needs.quoting': 123 }, 'to convert back and forth to', {
       type: 'ObjectExpression',
       properties: [
@@ -166,20 +166,20 @@ describe('esanimate', function() {
           type: 'Property',
           kind: 'init',
           key: { type: 'Literal', value: 'needs.quoting' },
-          value: { type: 'Literal', value: 123 }
-        }
-      ]
+          value: { type: 'Literal', value: 123 },
+        },
+      ],
     });
   });
 
-  it('should convert regular expression', function() {
+  it('should convert regular expression', function () {
     expect(/foobar/gim, 'to convert back and forth to', {
       type: 'Literal',
-      value: /foobar/gim
+      value: /foobar/gim,
     });
   });
 
-  it('should convert a named function', function() {
+  it('should convert a named function', function () {
     expect(
       function foo(bar, quux) {
         bar(123);
@@ -193,7 +193,7 @@ describe('esanimate', function() {
         async: false,
         params: [
           { type: 'Identifier', name: 'bar' },
-          { type: 'Identifier', name: 'quux' }
+          { type: 'Identifier', name: 'quux' },
         ],
         body: {
           type: 'BlockStatement',
@@ -203,18 +203,18 @@ describe('esanimate', function() {
               expression: {
                 type: 'CallExpression',
                 callee: { type: 'Identifier', name: 'bar' },
-                arguments: [{ type: 'Literal', value: 123, raw: '123' }]
-              }
-            }
-          ]
-        }
+                arguments: [{ type: 'Literal', value: 123, raw: '123' }],
+              },
+            },
+          ],
+        },
       }
     );
   });
 
-  it('should convert an anonymous function', function() {
+  it('should convert an anonymous function', function () {
     expect(
-      function(bar) {
+      function (bar) {
         bar();
       },
       'to convert back and forth to',
@@ -233,11 +233,11 @@ describe('esanimate', function() {
               expression: {
                 type: 'CallExpression',
                 callee: { type: 'Identifier', name: 'bar' },
-                arguments: []
-              }
-            }
-          ]
-        }
+                arguments: [],
+              },
+            },
+          ],
+        },
       }
     );
   });
