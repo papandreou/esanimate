@@ -26,7 +26,7 @@
     "unexpected-function-equality": "^3.0.0"
   },
   "dependencies": {
-    "escodegen": "^1.11.1",
+    "escodegen": "^2.0.0",
     "esprima": "^4.0.1"
   },
   "scripts": {
