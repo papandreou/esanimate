@@ -21,7 +21,7 @@
     "magicpen-prism": "^4.0.0",
     "mocha": "^7.0.0",
     "nyc": "^15.0.0",
-    "prettier": "~2.0.2",
+    "prettier": "~2.1.0",
     "unexpected": "^11.7.0",
     "unexpected-function-equality": "^3.0.0"
   },
