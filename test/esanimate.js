@@ -6,42 +6,39 @@ var expect = require('unexpected')
 
 var esanimate = require('../lib/esanimate');
 
-expect.addAssertion('<any> to convert to [canonical] ast <object>', function (
-  expect,
-  subject,
-  value
-) {
-  expect(
-    esanimate.astify(subject, expect.flags.canonical),
-    'to exhaustively satisfy',
-    value
-  );
-});
+expect.addAssertion(
+  '<any> to convert to [canonical] ast <object>',
+  function (expect, subject, value) {
+    expect(
+      esanimate.astify(subject, expect.flags.canonical),
+      'to exhaustively satisfy',
+      value
+    );
+  }
+);
 
 expect.addAssertion('to convert to object', function (expect, subject, value) {
   expect(esanimate.objectify(subject), 'to equal', value);
 });
 
-expect.addAssertion('to be converted from ast', function (
-  expect,
-  subject,
-  value
-) {
-  expect(esanimate.objectify(value), 'to equal', subject);
-});
+expect.addAssertion(
+  'to be converted from ast',
+  function (expect, subject, value) {
+    expect(esanimate.objectify(value), 'to equal', subject);
+  }
+);
 
-expect.addAssertion('to convert back and forth to', function (
-  expect,
-  subject,
-  value
-) {
-  return expect
-    .it('to convert to ast', value)
-    .and(
-      'to be converted from ast',
-      value
-    )(subject);
-});
+expect.addAssertion(
+  'to convert back and forth to',
+  function (expect, subject, value) {
+    return expect
+      .it('to convert to ast', value)
+      .and(
+        'to be converted from ast',
+        value
+      )(subject);
+  }
+);
 
 describe('esanimate', function () {
   describe('#astify', function () {
