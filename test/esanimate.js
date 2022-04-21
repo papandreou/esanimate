@@ -1,10 +1,10 @@
 /* global describe, it */
-var expect = require('unexpected')
+const expect = require('unexpected')
   .clone()
   .use(require('magicpen-prism'))
   .use(require('unexpected-function-equality'));
 
-var esanimate = require('../lib/esanimate');
+const esanimate = require('../lib/esanimate');
 
 expect.addAssertion(
   '<any> to convert to [canonical] ast <object>',
